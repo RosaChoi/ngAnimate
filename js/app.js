@@ -32,6 +32,14 @@ app.controller("contactController", function() {
       favorite: true
     },
     {
+      name: "Tim Garcia",
+      instagram: "@tim.garcia",
+      email: "tim@example.com",
+      phone: 14157771111,
+      address: "44 Tehama St San Francisco, CA",
+      favorite: true
+    },
+    {
       name: "Zubair Desai",
       instagram: "@zubaird",
       email: "zubair@example.com",

@@ -24,7 +24,7 @@ var app = angular.module("yourAppName", ['ngAnimate']);
 
 #### ng-hide & ng-show
 
-Animating the transition between true and false states for ng-show and ng-hide is as simple as defining an extra CSS class for your-css-selector.ng-hide. The .ng-hide CSS will be activated when the element is being hidden. For example, take this div named `add-new`:
+Animating the transition between boolean states (true or false) for `ng-show `and `ng-hide` is as simple as defining an extra CSS class for `your-css-selector.ng-hide`. The `.ng-hide` CSS will be activated when the element is being hidden. For example, take this div named `add-new`:
 
 ```html
 
@@ -52,16 +52,13 @@ To have this form fade in and out when it's being shown or hidden (respectively)
 /* property duration | timing function | name or all | delay */
 transition: 0.5s linear all 0.2s;
 ```
-#### ng-hide & ng-show
-
-
 If you want to find out more about the CSS transition property - [here](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
 
-Notice that we're using the CSS transition property to set the duration of the animation - ngAnimate takes note of this property and will perform its magic.
+Notice that we're using the CSS transition property to set the duration of the animation - ngAnimate takes note of this property and will perform its animation.
 
-#### Animate entrances & exits of ng-repeat elements
+#### ng-repeat
 
-ngAnimate provides CSS classes for ng-repeat elements when they're appearing, disappearing, and moving to a new index (.ng-enter, .ng-leave, and .ng-move respectively). To demonstrate, lets create an ng-repeat where the elements fade in and out for all three of these animation states.
+ngAnimate provides CSS classes for `ng-repeat` elements when they're appearing, disappearing, and moving to a new index (.ng-enter, .ng-leave, and .ng-move respectively). To demonstrate, lets create an ng-repeat where the elements fade in and out for all three of these animation states.
 
 ```html
 <div class="row contactlist">
@@ -110,18 +107,45 @@ ngAnimate provides CSS classes for ng-repeat elements when they're appearing, di
 
 These animations are especially neat when your ng-repeat is using dynamic filters or ordering. It provides immediate feedback to the user that the application is changing based on their input in a very delightful way.
 
-#### Using Animate.css for CSS Animation  ---- incomplete
+#### Using Animate.css for CSS Animation
+
+The hardest part of creating animations is setting up the keyframes manually. Using this library gives us the power of keyfram animations. All we need to do is calling a right animation name.
 
 First, we need to include Animate.css library.
 
-
 ```html
-<link https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css>
+<link https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css >
 ```
+
+Then, add your animation. It is that simple. Try different animations.
+
+```css
+.ng-enter,
+.ng-leave {
+  opacity: 0;
+}
+
+.ng-enter.ng-enter-active {
+  opacity: 1;
+  -webkit-animation:bounce 1.2s both ease-in;
+  -moz-animation:bounce 1.2s both ease-in;
+  animation:bounce 1.2s both ease-in;
+}
+
+.ng-move.ng-leave-active {
+  opacity: 1;
+  -webkit-animation:bounce 1.2s both ease-out;
+  -moz-animation:bounce 1.2s both ease-out;
+  animation:bounce 1.2s both ease-out;
+}
+```
+
+#### Bonus
+Try to display contact details with creative animation when the name is clicked!
 
 #### Other ngAnimate supported directives
 
-We've covered a few basic usage of ngAnimate with ng-hide/ng-show, ng-repeat and ng-class. This knowledge can be directly applied to animating many of the other directives present in Angular - below is a list of all the directives with their corresponding CSS classes:
+We've covered a few basic usage of ngAnimate with ng-hide/ng-show, ng-repeat and the Animate.css library. This knowledge can be directly applied to animating many of the other directives present in Angular - below is a list of all the directives with their corresponding CSS classes:
 
 * ngRepeat: enter, leave and move
 

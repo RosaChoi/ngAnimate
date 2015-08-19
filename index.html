@@ -85,7 +85,6 @@
           <div ng-repeat="person in contactCtrl.people | orderBy: sort | filter:search" class="col-sm-12 person" >
             <div class="contact-image" ng-click="contactCtrl.showDetail = !contactCtrl.showDetail"></div>
             <span><strong>{{ person.name }}</strong></span>
-            <!-- <a ng-href="#/details/{{ person.name }}" ng-animate-ref="{{ person.name }}"><strong>{{ person.name }}</strong></a> -->
           </div>
         </div>
       </div>

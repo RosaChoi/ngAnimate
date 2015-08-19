@@ -52,14 +52,21 @@
 
 
 /* Using Animte.css library */
-.details.ng-move,
-.details.ng-enter,
-.details.ng-leave {
-  -webkit-transition: margin-left 1s;
-  -o-transition: margin-left 1s;
-  transition: margin-left 1s;
+.ng-enter,
+.ng-leave {
+  opacity: 0;
 }
 
-.details.ng-leave.ng-leave.active {
-  animation-name: bounce;
+.ng-enter.ng-enter-active {
+  opacity: 1;
+  -webkit-animation:bounce 1.2s both ease-in;
+  -moz-animation:bounce 1.2s both ease-in;
+  animation:bounce 1.2s both ease-in;
+}
+
+.ng-move.ng-leave-active {
+  opacity: 1;
+  -webkit-animation:bounce 1.2s both ease-out;
+  -moz-animation:bounce 1.2s both ease-out;
+  animation:bounce 1.2s both ease-out;
 }
