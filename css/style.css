@@ -1,0 +1,53 @@
+.container {
+  margin-top: 1.5em;
+}
+h2 {
+  text-transform: uppercase;
+}
+
+.top-bar {
+  background-color: #ecf0f1;
+}
+
+.search-bar {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.menu-bar {
+  background-color: #1a242f;
+  color: #FFF;
+  padding: 5px;
+}
+
+.contactlist .person {
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.contact-image {
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  vertical-align: middle;
+  margin: 10px 13px;
+  background-color: rgb(249, 127, 223);
+  display: inline-block;
+}
+
+.fa-plus:hover {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.checkbox {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.add-new {
+  margin-top: 1.2em;
+}
+
+legend {
+  color: #95a5a6;
+}

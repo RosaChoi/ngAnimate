@@ -1,0 +1,65 @@
+/* animate ngRepeat in contact listing */
+.person.ng-move,
+.person.ng-enter,
+.person.ng-leave {
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+
+.person.ng-enter,
+.person.ng-move {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.person.ng-move.ng-move-active,
+.person.ng-enter.ng-enter-active {
+  opacity: 1;
+  height: 60px;
+}
+
+.person.ng-leave {
+  opacity: 1;
+  overflow: hidden;
+}
+
+.person.ng-leave.ng-leave-active {
+  opacity: 0;
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* ng-Hide/ng-Show Animation */
+.add-new {
+  -webkit-transition: 0.5s linear all 0.2s;
+  -moz-transition: 0.5s linear all 0.2s;
+  -o-transition: 0.5s linear all 0.2s;
+  transition: 0.5s linear all 0.2s;
+}
+
+.add-new.ng-hide {
+  transition: 0.5s linear all 0.2s;
+  -webkit-transition: 0.5s linear all 0.2s;
+  -moz-transition: 0.5s linear all 0.2s;
+  -o-transition: 0.5s linear all 0.2s;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+
+/* Using Animte.css library */
+.details.ng-move,
+.details.ng-enter,
+.details.ng-leave {
+  -webkit-transition: margin-left 1s;
+  -o-transition: margin-left 1s;
+  transition: margin-left 1s;
+}
+
+.details.ng-leave.ng-leave.active {
+  animation-name: bounce;
+}
